@@ -14,6 +14,7 @@ const filesToDownload = [
   'stockdefault_no_4s.ns',
   'stockmaster_4s.ns',
   'bitnode8_stockbuy.ns',
+  'manualscript.js',
 ]
 const valuesToRemove = ['BB_SERVER_MAP']
 
