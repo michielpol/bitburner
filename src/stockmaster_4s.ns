@@ -49,8 +49,8 @@ export async function main(ns) {
     let stocks = [];
     let myStocks = [];
     let corpus = 0;
-    for(let i = 0; i < ns.getStockSymbols().length; i++)
-        stocks.push({sym:ns.getStockSymbols()[i]});
+    for(let i = 0; i < ns.stock.getSymbols().length; i++)
+        stocks.push({sym:ns.stock.getSymbols()[i]});
         
     while(true){
         corpus = refresh(ns, stocks, myStocks);
