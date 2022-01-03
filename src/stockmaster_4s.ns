@@ -4,7 +4,7 @@ export async function main(ns) {
     ns.disableLog("stock.sell");
     while (true) {
         tendStocks(ns);
-        await ns.sleep(1*60*1000);
+        await ns.sleep(1*60*100);
     }
 }
 
