@@ -142,7 +142,7 @@ export async function main(ns) {
   ns.disableLog('ALL')
   let tickCounter = 1
 
-  stockSymbols = ns.getStockSymbols()
+  stockSymbols = ns.stock.getSymbols()
 
   corpus = ns.getServerMoneyAvailable('home') - 1000000
   stockSymbols.forEach((stockSymbol) => {
