@@ -1,14 +1,6 @@
 # Bitburner scripts collection
 
-Welcome to my log of [Bitburner](https://danielyxie.github.io/bitburner/) scripts. They are written using the in-game language of NetscriptJS, which is a mutation of Javascript.
-
-If you want to play the game itself - click on the name above.
-
-## Requirements
-
-The script has been modified to be able to start on 8 GB (the default starting RAM for a player) on the `home` server. Obviously, when you expand the memory available, you'll get extra perks - being able to buy and manage player-owned servers, as well as using spare RAM to do actions.
-
-The script can be slow to get going, but it'll get there eventually. Getting access to more port hackers will improve the performance.
+This is a copy from https://github.com/moriakaice/bitburner/. just added a small fix to the time, added buyhacknet.ns for passive money in the beginning (https://github.com/SkyllarRisen/bitburner/blob/eae34c822c237780677522390a141920a0ad453d/buyhacknet.ns) , and some stockmarket scripts copied from various people, (https://www.reddit.com/r/Bitburner/comments/9o1xle/stock_market_script/) and (https://www.reddit.com/r/Bitburner/comments/rsqffz/bitnode_8_stockmarket_algo_trader_script_without/) with a nodification to make it work outside of bitnode8/before you get some sourcefile (disabled short buying, change < -1000000 to 0.)
 
 ## Instalation
 
