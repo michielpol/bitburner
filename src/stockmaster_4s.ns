@@ -75,6 +75,9 @@ export async function main(ns) {
         //Buy shares with cash remaining in hand
         let cashToSpend = ns.getServerMoneyAvailable("home") - (fracH * corpus);
         let numShares = Math.floor((cashToSpend - commission)/stocks[0].price);
+        if (numShares > ns.stock.getMaxShares(stocks[0].sym))
+
+numShares = ns.stock.getMaxShares(stocks[0].sym);
         if ((numShares * stocks[0].expRet * stocks[0].price * numCycles) > commission)
             buy(ns, stocks[0], numShares);
         
