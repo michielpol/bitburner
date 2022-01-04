@@ -7,7 +7,7 @@ var moneyThresh = getServerMaxMoney(target) * 1;
 // we'll weaken it before doing anything else
 var securityThresh = getServerMinSecurityLevel(target) + 5;
 
-/ Infinite loop that continously hacks/grows/weakens the target server
+// Infinite loop that continously hacks/grows/weakens the target server
 while(true) {
     if (getServerSecurityLevel(target) > securityThresh) {
         // If the server's security level is above our threshold, weaken it
