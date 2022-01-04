@@ -25,7 +25,7 @@ function tendStocks(ns) {
     const portfolioValue = getPortfolioValue(allStocks);
     const cashValue = ns.getPlayer().money;
     const totalValue = portfolioValue + cashValue;
-    ns.print(`Net worth: ${ns.nFormat(totalValue, "$0.000a")} = ${ns.nFormat(portfolioValue, "$0.0a")} stocks + ${ns.nFormat(cashValue, "$0.0a")} cash`);
+    ns.print(`INFO Net worth: ${ns.nFormat(totalValue, "$0.000a")} = ${ns.nFormat(portfolioValue, "$0.0a")} stocks + ${ns.nFormat(cashValue, "$0.0a")} cash`);
 }
 
 function getAllStocks(ns) {
@@ -92,7 +92,7 @@ function sellStocks(ns, stocksToSell) {
                 const saleCost = stock.sharesAvgPrice * stock.shares;
                 const saleProfit = saleTotal - saleCost;
                 stock.shares = 0;
-                ns.print(`Sold ${stock.summary} stock for ${ns.nFormat(saleProfit, "$0.0a")} profit`);
+                ns.print(`WARN Sold ${stock.summary} stock for ${ns.nFormat(saleProfit, "$0.0a")} profit`);
             }
         }
     }
