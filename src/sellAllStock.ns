@@ -38,10 +38,10 @@ function sellLongs(ns, stockSymbol) {
 }
 
 function getStockInfo(ns, stockSymbol) {
-  const [sharesLong, avgPriceLong, sharesShort, avgPriceShort] = ns.getStockPosition(stockSymbol)
+  const [sharesLong, avgPriceLong, sharesShort, avgPriceShort] = ns.stock.getPosition(stockSymbol)
 
-  const stockAskPrice = ns.getStockAskPrice(stockSymbol)
-  const stockBidPrice = ns.getStockBidPrice(stockSymbol)
+  const stockAskPrice = ns.stock.getAskPrice(stockSymbol)
+  const stockBidPrice = ns.stock.getBidPrice(stockSymbol)
 
   return {
     stockSymbol,
@@ -57,7 +57,7 @@ function getStockInfo(ns, stockSymbol) {
 export async function main(ns) {
   ns.disableLog('ALL')
 
-  stockSymbols = ns.getStockSymbols()
+  stockSymbols = ns.stock.getSymbols()
   stockSymbols.forEach((stockSymbol) => {
     sellLongs(ns, stockSymbol)
     sellShorts(ns, stockSymbol)
