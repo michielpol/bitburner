@@ -1,0 +1,5 @@
+// get server RAM, divide by script RAM
+
+var howManyScripts = Math.floor((ns.getServerMaxRam("home")) / (ns.getScriptRam(script.js, "home")))
+
+ns.exec(script.js, "home", howManyScripts)
