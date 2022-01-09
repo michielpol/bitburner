@@ -27,7 +27,7 @@ function processTick(ns, stockSymbol) {
   let positionChanged = false
   let avgTracker = avgTrackers[stockSymbol] || []
   let rising = risingTrackers[stockSymbol]
-  avgTracker.push(ns.getStockPrice(stockSymbol))
+  avgTracker.push(ns.stock.getPrice(stockSymbol))
   avgTracker = avgTracker.slice(-40)
 
   if (avgTracker.length === 40) {
@@ -37,7 +37,7 @@ function processTick(ns, stockSymbol) {
     const avg10 = average(avgTracker.slice(-10))
 
     if (profitTracker.volume && profitTracker.position) {
-      const stockSaleGain = ns.getStockSaleGain(stockSymbol, profitTracker.volume, profitTracker.position)
+      const stockSaleGain = ns.stock.getSaleGain(stockSymbol, profitTracker.volume, profitTracker.position)
       profitPercentage = (stockSaleGain - profitTracker.volume * profitTracker.value) / (profitTracker.volume * profitTracker.value)
 
       if (Math.abs(profitPercentage) > profitMargin) {
