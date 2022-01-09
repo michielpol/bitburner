@@ -123,8 +123,8 @@ function processTick(ns, stockSymbol) {
 
         const moneyToInvest = firstInvests[stockSymbol] ? getMoney(ns) : Math.floor(corpus / 6)
         if (moneyToInvest > minimumMoneyToInvest) {
-          let volume = Math.floor(moneyToInvest / ns.getStockAskPrice(stockSymbol))
-          volume = Math.min(volume, ns.getStockMaxShares(stockSymbol))
+          let volume = Math.floor(moneyToInvest / ns.stock.getAskPrice(stockSymbol))
+          volume = Math.min(volume, ns.stock.getMaxShares(stockSymbol))
 
           if (volume > 0) {
             const longBuyValue = ns.buyStock(stockSymbol, volume)
@@ -185,8 +185,8 @@ function processTick(ns, stockSymbol) {
 
         const moneyToInvest = firstInvests[stockSymbol] ? getMoney(ns) : Math.floor(corpus / 6)
         if (moneyToInvest > minimumMoneyToInvest) {
-          let volume = Math.floor(moneyToInvest / ns.getStockBidPrice(stockSymbol))
-          volume = Math.min(volume, ns.getStockMaxShares(stockSymbol))
+          let volume = Math.floor(moneyToInvest / ns.stock.getBidPrice(stockSymbol))
+          volume = Math.min(volume, ns.stock.getMaxShares(stockSymbol))
 
           if (volume > 0) {
             const shortBuyValue = ns.shortStock(stockSymbol, volume)
@@ -236,7 +236,7 @@ export async function main(ns) {
   corpus = ns.getServerMoneyAvailable('home') - 1000000
 
   stockSymbols.forEach((stockSymbol) => {
-    const [sharesLong, avgPriceLong, sharesShort, avgPriceShort] = ns.getStockPosition(stockSymbol)
+    const [sharesLong, avgPriceLong, sharesShort, avgPriceShort] = ns.stock.getPosition(stockSymbol)
 
     corpus += sharesLong * avgPriceLong + sharesShort * avgPriceShort
   })
